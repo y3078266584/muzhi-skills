@@ -1,3 +1,5 @@
-display_name: Codex Plugin Doctor
-short_description: Diagnose and repair Codex openai-bundled plugins on Windows
-default_prompt: Repair my Codex openai-bundled plugins
+interface:
+  display_name: "Codex Plugin Doctor"
+  short_description: "Diagnose and repair Codex openai-bundled plugins on Windows"
+  brand_color: "#EF4444"
+  default_prompt: "Use `$codex-plugin-doctor` to diagnose and repair my Codex openai-bundled plugins (Browser, Chrome, Computer Use) on Windows."

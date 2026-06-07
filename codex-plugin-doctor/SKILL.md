@@ -5,7 +5,7 @@ description: "Diagnose and repair Codex openai-bundled plugins (browser@, chrome
 
 # Codex Plugin Doctor
 
-Repair openai-bundled plugins on Windows Codex desktop. This skill fixes the root causes that lead to rowser@openai-bundled, chrome@openai-bundled, and computer-use@openai-bundled showing as "not installed" or failing to work.
+Repair openai-bundled plugins on Windows Codex desktop. This skill fixes the root causes that lead to rowser@openai-bundled, chrome@openai-bundled, and computer-use@openai-bundled showing as "not installed" or failing to work.
 
 ## Quick Repair
 
