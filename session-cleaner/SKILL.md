@@ -1,4 +1,4 @@
-﻿---
+---
 name: session-cleaner
 description: Clean up orphaned Codex session files whose project directories no longer exist on disk. Use when the user asks to clean up Codex sessions, remove unused project conversations, clear orphaned dialogs, tidy up session files, delete old project threads, or says "清理无用对话", "清理 Codex 会话", "删除过期对话", "清理 sessions", "删除不在项目列表的对话", "清理孤儿会话". This skill scans all session jsonl files, extracts their cwd project path, deletes sessions where the project no longer exists, and removes empty date directories.
 ---

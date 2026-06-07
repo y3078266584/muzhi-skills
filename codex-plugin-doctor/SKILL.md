@@ -1,4 +1,4 @@
-﻿---
+---
 name: codex-plugin-doctor
 description: Diagnose and repair Codex openai-bundled plugins (browser@, chrome@, computer-use@) on Windows. Use when Codex plugins become unavailable, show as "not installed" after restart, or when browser/Chrome/Computer Use plugins fail to work. Triggers on: plugin repair, fix plugins, plugin not working, plugin not installed, openai-bundled repair, Codex plugin doctor.
 ---

@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     Clean up orphaned Codex session files whose project directories no longer exist.
 .DESCRIPTION

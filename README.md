@@ -1,4 +1,4 @@
-﻿# 🧰 沐挚的 Skill 仓库 · MuZhi Skills
+# 🧰 沐挚的 Skill 仓库 · MuZhi Skills
 
 个人的 [Codex](https://github.com/openai/codex) Skill 合集——即插即用的扩展，提升你的编码体验。
 

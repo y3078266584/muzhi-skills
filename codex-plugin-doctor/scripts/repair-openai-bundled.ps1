@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     Repair openai-bundled plugins for Codex on Windows.
     Ensures browser@, chrome@, and computer-use@ openai-bundled plugins are installed and enabled.
