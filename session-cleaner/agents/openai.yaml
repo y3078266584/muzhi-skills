@@ -1,0 +1,5 @@
+﻿interface:
+  display_name: "Session Cleaner"
+  short_description: "Clean orphaned Codex sessions"
+  brand_color: "#6B7280"
+  default_prompt: "Use `$session-cleaner` to remove orphaned Codex sessions whose projects no longer exist."
