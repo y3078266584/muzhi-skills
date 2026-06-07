@@ -10,18 +10,39 @@
 
 ## 🌟 为什么需要？ · Why?
 
-Coding Agent 用久了，总有些"家务活"让人头疼：会话文件越堆越多占磁盘、插件莫名失效查半天……这些 Skill 就是你的自动化小帮手，**一句话触发，自动搞定**。
+Coding Agent 用久了，总有些"家务活"让人头疼：Codex Windows 端 Computer Use 用不了、插件莫名失效、会话文件越堆越多占磁盘……这些 Skill 就是你的自动化小帮手，**一句话触发，自动搞定**。
 
-After weeks of using a coding agent, the housekeeping piles up: orphaned session files eating disk space, plugins mysteriously breaking… These skills are your one-command fix — **say the word, and it's handled**.
+After weeks of using a coding agent, the housekeeping piles up: Computer Use broken on Windows, plugins mysteriously failing, orphaned session files eating disk space… These skills are your one-command fix — **say the word, and it's handled**.
 
 | 痛点 Pain Point | 解决方案 Solution |
 | :--- | :--- |
+| 💔 Codex Windows 端 Computer Use 不可用 / 插件报 "not installed" | [`codex-plugin-doctor`](#-codex-plugin-doctor) 自动诊断修复 |
 | 🗑️ 已删项目的 Codex 会话残留，白白占空间 | [`session-cleaner`](#-session-cleaner) 一键扫描清理 |
-| 💔 Codex 插件重启后报 "not installed" | [`codex-plugin-doctor`](#-codex-plugin-doctor) 自动诊断修复 |
 
 ---
 
 ## 📦 可用 Skill · Available Skills
+
+### 🩺 codex-plugin-doctor
+
+> 诊断并修复 Codex Windows 端 openai-bundled 插件（Browser、Chrome、**Computer Use**）不可用的问题——包括重启后 Computer Use 无法启动、插件显示 "not installed" 等高频故障。
+> Diagnose and repair Codex openai-bundled plugins (Browser, Chrome, **Computer Use**) on Windows — including the common "Computer Use won't start after restart" and "not installed" issues.
+
+**🐧 特别针对 Windows Computer Use 修复 · Windows Computer Use fix:**
+这是目前 Codex Windows 用户遇到最多的问题之一——重启后 Computer Use 消失、无法控制桌面应用。本 Skill 自动处理根因并恢复。
+
+**修复项 · What it fixes:**
+
+- 🖥️ **Computer Use 不可用** —— 自动注册 `computer-use@openai-bundled` 到 `config.toml`，确保 Codex 能发现并启动该插件
+- Chrome `latest` 目录链接 —— 指向错误或缺失，导致原生消息主机路径解析失败
+- 插件注册 —— `chrome@openai-bundled` 和 `computer-use@openai-bundled` 未写入 `config.toml`
+- 市场损坏 —— `.codex\.tmp\bundled-marketplaces\` 目录不完整（Codex 启动时从 WindowsApps 拷贝失败）
+- 市场持久化 —— 将市场从临时目录迁移到 `.codex\marketplaces\`，避免重启后被清除
+- 支持 `-DryRun` 预览模式，改动前先看影响范围
+
+**触发词 · Triggers:** "修复插件" / "插件坏了" / "Computer Use 用不了" / "plugin not working" / "插件未安装" / "Codex plugin doctor" / "plugin repair"
+
+---
 
 ### 🧹 session-cleaner
 
@@ -43,25 +64,6 @@ After weeks of using a coding agent, the housekeeping piles up: orphaned session
 
 ---
 
-### 🩺 codex-plugin-doctor
-
-> 诊断并修复 Codex 的 openai-bundled 插件（Browser、Chrome、Computer Use）在 Windows 上不可用的问题。
-> Diagnose and repair Codex openai-bundled plugins (Browser, Chrome, Computer Use) on Windows.
-
-Codex 重启后插件显示 "not installed"？Browser / Chrome / Computer Use 突然用不了？这个 Skill 自动排查根因并修复。
-
-**修复项 · What it fixes:**
-
-- Chrome `latest` 目录链接 —— 指向错误或缺失，导致原生消息主机路径解析失败
-- 插件注册 —— `chrome@openai-bundled` 和 `computer-use@openai-bundled` 未写入 `config.toml`
-- 市场损坏 —— `.codex\.tmp\bundled-marketplaces\` 目录不完整（Codex 启动时从 WindowsApps 拷贝失败）
-- 市场持久化 —— 将市场从临时目录迁移到 `.codex\marketplaces\`，避免重启后被清除
-- 支持 `-DryRun` 预览模式，改动前先看影响范围
-
-**触发词 · Triggers:** "修复插件" / "插件坏了" / "plugin not working" / "插件未安装" / "Codex plugin doctor" / "plugin repair"
-
----
-
 ## 🔧 安装 · Install
 
 一行命令安装任意 Skill：
@@ -73,11 +75,11 @@ codex skills install --repo y3078266584/muzhi-skills --path <skill-name>
 示例：
 
 ```bash
-# session-cleaner
-codex skills install --repo y3078266584/muzhi-skills --path session-cleaner
-
 # codex-plugin-doctor
 codex skills install --repo y3078266584/muzhi-skills --path codex-plugin-doctor
+
+# session-cleaner
+codex skills install --repo y3078266584/muzhi-skills --path session-cleaner
 ```
 
 或使用完整 GitHub URL：
