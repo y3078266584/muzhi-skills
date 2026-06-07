@@ -28,6 +28,25 @@ A personal collection of [Codex](https://github.com/openai/codex) skills — plu
 
 ---
 
+### 🩺 codex-plugin-doctor
+
+> 诊断并修复 Codex 的 openai-bundled 插件（Browser、Chrome、Computer Use）在 Windows 上不可用的问题。
+> Diagnose and repair Codex openai-bundled plugins (Browser, Chrome, Computer Use) on Windows.
+
+Codex 重启后插件显示 "not installed"？Browser / Chrome / Computer Use 突然用不了？这个 Skill 自动排查根因并修复。
+
+**修复项 · What it fixes:**
+
+- Chrome `latest` 目录链接 —— 指向错误或缺失，导致原生消息主机路径解析失败
+- 插件注册 —— `chrome@openai-bundled` 和 `computer-use@openai-bundled` 未写入 `config.toml`
+- 市场损坏 —— `.codex\.tmp\bundled-marketplaces\` 目录不完整（Codex 启动时从 WindowsApps 拷贝失败）
+- 市场持久化 —— 将市场从临时目录迁移到 `.codex\marketplaces\`，避免重启后被清除
+- 支持 `-DryRun` 预览模式，改动前先看影响范围
+
+**触发词 · Triggers:** "修复插件" / "插件坏了" / "plugin not working" / "插件未安装" / "Codex plugin doctor" / "plugin repair"
+
+---
+
 ## 🔧 安装 · Install
 
 一行命令安装任意 Skill：
@@ -39,7 +58,11 @@ codex skills install --repo y3078266584/muzhi-skills --path <skill-name>
 示例：
 
 ```bash
+# session-cleaner
 codex skills install --repo y3078266584/muzhi-skills --path session-cleaner
+
+# codex-plugin-doctor
+codex skills install --repo y3078266584/muzhi-skills --path codex-plugin-doctor
 ```
 
 或使用完整 GitHub URL：
@@ -54,7 +77,7 @@ codex skills install --url https://github.com/y3078266584/muzhi-skills/tree/main
 
 ## 🤝 贡献 · Contributing
 
-有好点子？欢迎 PR！每个 Skill 独立一个目录，至少包含 `SKILL.md`。参考 [session-cleaner](./session-cleaner) 的目录结构即可。
+有好点子？欢迎 PR！每个 Skill 独立一个目录，至少包含 `SKILL.md`。参考现有 Skill 的目录结构即可。
 
 ---
 
