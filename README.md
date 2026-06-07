@@ -1,8 +1,23 @@
-# 🧰 沐挚的 Skill 仓库 · MuZhi Skills
+﻿# 🧰 沐挚的 Skill 仓库 · MuZhi Skills
 
-个人的 [Codex](https://github.com/openai/codex) Skill 合集——即插即用的扩展，提升你的编码体验。
+<p align="center">
+  <i>个人的 <a href="https://github.com/openai/codex">Codex</a> Skill 合集——即插即用的扩展，提升你的编码体验。</i>
+  <br>
+  <i>A personal collection of <a href="https://github.com/openai/codex">Codex</a> skills — plug-and-play extensions that enhance your coding workflow.</i>
+</p>
 
-A personal collection of [Codex](https://github.com/openai/codex) skills — plug-and-play extensions that enhance your coding workflow.
+---
+
+## 🌟 为什么需要？ · Why?
+
+Coding Agent 用久了，总有些"家务活"让人头疼：会话文件越堆越多占磁盘、插件莫名失效查半天……这些 Skill 就是你的自动化小帮手，**一句话触发，自动搞定**。
+
+After weeks of using a coding agent, the housekeeping piles up: orphaned session files eating disk space, plugins mysteriously breaking… These skills are your one-command fix — **say the word, and it's handled**.
+
+| 痛点 Pain Point | 解决方案 Solution |
+| :--- | :--- |
+| 🗑️ 已删项目的 Codex 会话残留，白白占空间 | [`session-cleaner`](#-session-cleaner) 一键扫描清理 |
+| 💔 Codex 插件重启后报 "not installed" | [`codex-plugin-doctor`](#-codex-plugin-doctor) 自动诊断修复 |
 
 ---
 
