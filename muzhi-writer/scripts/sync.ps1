@@ -1,8 +1,11 @@
-param(
-    [switch]$Force
-)
+param([switch]$Force)
 
-$source = "E:\AI\AI Coding\Interacting with Codex\My Skills\muzhi-writer"
+$source = if (Test-Path "E:\AI\AI Coding\Interacting with Codex\My Skills\muzhi-writer") {
+    "E:\AI\AI Coding\Interacting with Codex\My Skills\muzhi-writer"
+} else {
+    Split-Path -Parent $MyInvocation.MyCommand.Path
+}
+
 $target = "$env:USERPROFILE\.codex\skills\muzhi-writer"
 
 if (-not (Test-Path $target)) {
