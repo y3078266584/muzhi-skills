@@ -1,5 +1,5 @@
 interface:
   display_name: "沐挚写作"
-  short_description: "以沐挚温和克制的个人风格撰写任何文体——书信、随笔、复盘、工具分享、感悟反思、学习笔记"
+  short_description: "以沐挚温和克制的个人风格浸润任何写作——无论写什么，都像写信给朋友"
   brand_color: "#4F8C8C"
-  default_prompt: "Use muzhi-writer to write articles in MuZhi personal style."
+  default_prompt: "Use muzhi-writer to write in MuZhi personal style, adapted from khazix-writer by Khazix."

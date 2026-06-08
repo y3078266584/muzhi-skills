@@ -69,19 +69,19 @@ After weeks of using a coding agent, the housekeeping piles up: Computer Use bro
 
 ### ✍️ muzhi-writer
 
-> 沐挚的个人写作风格 Skill。以"像写信给朋友一样"的风格撰写任何文体——书信、随笔、复盘、工具分享、个人感悟。
-> MuZhi's personal writing style skill. Write in a warm, letter-to-a-friend style across any genre — letters, essays, reflections, tool reviews, personal notes.
+> 沐挚的个人写作风格 Skill。以"像写信给朋友一样"的温和底色浸润任何文字——无论写什么题材，风格始终如一。
+> MuZhi's personal writing style skill. A warm, letter-to-a-friend tone that permeates any kind of writing.
 
-采用**反向构建法**：先手写风格规则 + 四层自检体系（L1硬性规则 → L2风格一致性 → L3内容质量 → L4活人感终审），再通过 AI 迭代补全。
+基于卡兹克（Khazix）的 [khazix-writer](https://github.com/KKKKhazix/khazix-skills) 方法论进行个人风格化改写。采用**反向构建法**：先手写风格规则 + 四层自检体系（L1硬性规则 → L2风格一致性 → L3内容质量 → L4活人感终审），再通过 AI 迭代补全。
 
 **核心特点 · Core features:**
-- 📝 **全文体覆盖**：书信体、随笔、复盘总结、工具分享、观点表达、学习笔记
 - 🎨 **温和克制**的中文写作底色，融合古典词汇与现代口语
 - 🔄 **认知转折**——"我原以为...后来发现..."，沐挚的标志性手法
 - ✅ **四层自检**输出格式，产出后可一键质检
 - 🧩 附完整风格示例库 + 内容方法论
+- 🙏 框架方法论源自 [khazix-writer](https://github.com/KKKKhazix/khazix-skills)
 
-**触发词 · Triggers:** "写文章" / "帮我写" / "续写" / "按我的风格写" / "沐挚风格" / "写封信" / "写个复盘" / "写篇随笔"
+**触发词 · Triggers:** "写文章" / "帮我写" / "续写" / "按我的风格写" / "沐挚风格" / "写成笔记" / "帮我表达"
 
 **安装 · Install:**
 ```bash
