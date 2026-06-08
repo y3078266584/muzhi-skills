@@ -67,26 +67,28 @@ After weeks of using a coding agent, the housekeeping piles up: Computer Use bro
 
 ---
 
+
 ### ✍️ muzhi-writer
 
-> 沐挚的个人写作风格 Skill。以"像写信给朋友一样"的温和底色浸润任何文字——无论写什么题材，风格始终如一。
-> MuZhi's personal writing style skill. A warm, letter-to-a-friend tone that permeates any kind of writing.
+> 沐挚的个人写作风格 Skill。以"像写信给朋友一样"的温和底色浸润任何文字——无论写什么，风格始终如一。
+> MuZhi's personal writing style. A warm, letter-to-a-friend tone that permeates anything you write.
 
 基于卡兹克（Khazix）的 [khazix-writer](https://github.com/KKKKhazix/khazix-skills) 方法论进行个人风格化改写。采用**反向构建法**：先手写风格规则 + 四层自检体系（L1硬性规则 → L2风格一致性 → L3内容质量 → L4活人感终审），再通过 AI 迭代补全。
 
 **核心特点 · Core features:**
 - 🎨 **温和克制**的中文写作底色，融合古典词汇与现代口语
-- 🔄 **认知转折**——"我原以为...后来发现..."，沐挚的标志性手法
+- 🔍 **微观古典替换**——不靠大段文言，靠一字一词的选择（于、愈、而、终而、并非、抑或等）
+- 🧠 **自然的思考推进**——从不确定走向理解，而非硬塞"模板式转折"
 - ✅ **四层自检**输出格式，产出后可一键质检
-- 🧩 附完整风格示例库 + 内容方法论
+- 🧩 附完整风格示例库（含证据对照表）+ 内容方法论
 - 🙏 框架方法论源自 [khazix-writer](https://github.com/KKKKhazix/khazix-skills)
 
 **触发词 · Triggers:** "写文章" / "帮我写" / "续写" / "按我的风格写" / "沐挚风格" / "写成笔记" / "帮我表达"
 
 **安装 · Install:**
-```bash
+`ash
 codex skills install --repo y3078266584/muzhi-skills --path muzhi-writer
-```
+`
 ## 🔧 安装 · Install
 
 一行命令安装任意 Skill：
