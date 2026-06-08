@@ -1,4 +1,4 @@
-﻿# OS
+# OS
 Thumbs.db
 Desktop.ini
 $RECYCLE.BIN/
@@ -22,4 +22,3 @@ venv/
 # Logs
 *.log
 
-muzhi-writer/

@@ -1,0 +1,5 @@
+interface:
+  display_name: "沐挚写作"
+  short_description: "帮助以沐挚的个人写作风格撰写AI工具分享与个人感悟"
+  brand_color: "#4F8C8C"
+  default_prompt: "Use `$muzhi-writer` to write articles in MuZhi personal style."
