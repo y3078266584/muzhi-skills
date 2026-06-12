@@ -1,4 +1,4 @@
-# 🧰 沐挚的 Skill 仓库 · MuZhi Skills
+﻿# 🧰 沐挚的 Skill 仓库 · MuZhi Skills
 
 <p align="center">
   <i>个人的 <a href="https://github.com/openai/codex">Codex</a> Skill 合集——即插即用的扩展，提升你的编码体验。</i>
@@ -10,14 +10,16 @@
 
 ## 🌟 为什么需要？ · Why?
 
-Coding Agent 用久了，总有些"家务活"让人头疼：Codex Windows 端 Computer Use 用不了、插件莫名失效、会话文件越堆越多占磁盘……这些 Skill 就是你的自动化小帮手，**一句话触发，自动搞定**。
+Coding Agent 用久了，总有些"家务活"让人头疼。这些 Skill 就是你的自动化小帮手，**一句话触发，自动搞定**。
 
-After weeks of using a coding agent, the housekeeping piles up: Computer Use broken on Windows, plugins mysteriously failing, orphaned session files eating disk space… These skills are your one-command fix — **say the word, and it's handled**.
+After weeks of using a coding agent, the housekeeping piles up. These skills are your one-command fix — **say the word, and it's handled**.
 
 | 痛点 Pain Point | 解决方案 Solution |
 | :--- | :--- |
-| 💔 Codex Windows 端 Computer Use 不可用 / 插件报 "not installed" | [`codex-plugin-doctor`](#-codex-plugin-doctor) 自动诊断修复 |
-| 🗑️ 已删项目的 Codex 会话残留，白白占空间 | [`session-cleaner`](#-session-cleaner) 一键扫描清理 |
+| 💔 Codex Windows 端 Computer Use 不可用 / 插件报 "not installed" | [codex-plugin-doctor](#-codex-plugin-doctor) 自动诊断修复 |
+| 🗑️ 已删项目的 Codex 会话残留，白白占空间 | [session-cleaner](#-session-cleaner) 一键扫描清理 |
+| 🐚 在 PowerShell 里写命令，引号嵌套总翻车 | [powershell-quoting](#-powershell-quoting) 规则速查，告别犯错 |
+| ✍️ 想用沐挚的温和风格写文章，但每次都手调 | [muzhi-writer](#-muzhi-writer) 一键套用写作风格 |
 
 ---
 
@@ -33,12 +35,12 @@ After weeks of using a coding agent, the housekeeping piles up: Computer Use bro
 
 **修复项 · What it fixes:**
 
-- 🖥️ **Computer Use 不可用** —— 自动注册 `computer-use@openai-bundled` 到 `config.toml`，确保 Codex 能发现并启动该插件
-- Chrome `latest` 目录链接 —— 指向错误或缺失，导致原生消息主机路径解析失败
-- 插件注册 —— `chrome@openai-bundled` 和 `computer-use@openai-bundled` 未写入 `config.toml`
-- 市场损坏 —— `.codex\.tmp\bundled-marketplaces\` 目录不完整（Codex 启动时从 WindowsApps 拷贝失败）
-- 市场持久化 —— 将市场从临时目录迁移到 `.codex\marketplaces\`，避免重启后被清除
-- 支持 `-DryRun` 预览模式，改动前先看影响范围
+- 🖥️ **Computer Use 不可用** —— 自动注册 computer-use@openai-bundled 到 config.toml，确保 Codex 能发现并启动该插件
+- Chrome latest 目录链接 —— 指向错误或缺失，导致原生消息主机路径解析失败
+- 插件注册 —— chrome@openai-bundled 和 computer-use@openai-bundled 未写入 config.toml
+- 市场损坏 —— .codex\.tmp\bundled-marketplaces\ 目录不完整（Codex 启动时从 WindowsApps 拷贝失败）
+- 市场持久化 —— 将市场从临时目录迁移到 .codex\marketplaces\，避免重启后被清除
+- 支持 -DryRun 预览模式，改动前先看影响范围
 
 **触发词 · Triggers:** "修复插件" / "插件坏了" / "Computer Use 用不了" / "plugin not working" / "插件未安装" / "Codex plugin doctor" / "plugin repair"
 
@@ -49,12 +51,12 @@ After weeks of using a coding agent, the housekeeping piles up: Computer Use bro
 > 清理项目目录已不存在（已删除/已移动）的孤儿 Codex 会话文件。
 > Clean up orphaned Codex session files whose project directories no longer exist on disk.
 
-长期使用 Codex 后，`~/.codex/sessions` 下会堆积大量已删项目的残留会话，占用磁盘空间。这个 Skill 一键扫干净。
+长期使用 Codex 后，~/.codex/sessions 下会堆积大量已删项目的残留会话，占用磁盘空间。这个 Skill 一键扫干净。
 
 **功能 · What it does:**
 
-- 扫描 `~/.codex/sessions` 下所有 `*.jsonl` 会话文件
-- 读取每个文件提取原始项目路径（`cwd`）
+- 扫描 ~/.codex/sessions 下所有 *.jsonl 会话文件
+- 读取每个文件提取原始项目路径（cwd）
 - 检查项目目录是否仍存在于磁盘
 - 删除项目已消失的会话
 - 清理空的日期子目录
@@ -64,9 +66,20 @@ After weeks of using a coding agent, the housekeeping piles up: Computer Use bro
 
 ---
 
+### 🐚 powershell-quoting
+
+> PowerShell 引号转义规则与最佳实践——在 Windows/PowerShell 环境中编写命令时，帮你避免嵌套引号翻车。
+> PowerShell quoting rules and best practices — avoid nested-quote disasters when writing commands on Windows.
+
+**功能 · What it does:**
+
+- 引号行为速查（单引号 / 双引号 / 反引号）
+- 常见错误场景与正确写法：外部 exe 传参、JSON 传递、cmd /c 嵌套、Start-Process splatting
+- 安全检查清单，写命令前逐条对照
+
+**触发词 · Triggers:** 在 Windows/PowerShell 环境中编写命令时自动触发，避免嵌套引号错误
 
 ---
-
 
 ### ✍️ muzhi-writer
 
@@ -85,33 +98,37 @@ After weeks of using a coding agent, the housekeeping piles up: Computer Use bro
 
 **触发词 · Triggers:** "写文章" / "帮我写" / "续写" / "按我的风格写" / "沐挚风格" / "写成笔记" / "帮我表达"
 
-**安装 · Install:**
-`ash
-codex skills install --repo y3078266584/muzhi-skills --path muzhi-writer
-`
+---
+
 ## 🔧 安装 · Install
 
 一行命令安装任意 Skill：
 
-```bash
+`ash
 codex skills install --repo y3078266584/muzhi-skills --path <skill-name>
-```
+`
 
 示例：
 
-```bash
-# codex-plugin-doctor
+`ash
+# codex-plugin-doctor（最高频，推荐先装）
 codex skills install --repo y3078266584/muzhi-skills --path codex-plugin-doctor
 
 # session-cleaner
 codex skills install --repo y3078266584/muzhi-skills --path session-cleaner
-```
+
+# powershell-quoting
+codex skills install --repo y3078266584/muzhi-skills --path powershell-quoting
+
+# muzhi-writer
+codex skills install --repo y3078266584/muzhi-skills --path muzhi-writer
+`
 
 或使用完整 GitHub URL：
 
-```bash
+`ash
 codex skills install --url https://github.com/y3078266584/muzhi-skills/tree/main/<skill-name>
-```
+`
 
 > ⚠️ 安装后需重启 Codex 才能识别新 Skill。Restart Codex after installation to pick up new skills.
 
@@ -119,7 +136,7 @@ codex skills install --url https://github.com/y3078266584/muzhi-skills/tree/main
 
 ## 🤝 贡献 · Contributing
 
-有好点子？欢迎 PR！每个 Skill 独立一个目录，至少包含 `SKILL.md`。参考现有 Skill 的目录结构即可。
+有好点子？欢迎 PR！每个 Skill 独立一个目录，至少包含 SKILL.md。参考现有 Skill 的目录结构即可。
 
 ---
 
