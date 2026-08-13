@@ -1,5 +1,0 @@
-﻿interface:
-  display_name: "PowerShell Quoting"
-  short_description: "PowerShell quoting rules and best practices"
-  brand_color: "#0078D7"
-  default_prompt: "Use \-quoting for PowerShell quoting rules when writing commands in Windows."

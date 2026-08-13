@@ -1,8 +1,12 @@
 # MuZhi Skills — 项目约定
 
+> 本项目为 **Skill 索引仓库**。每个 Skill 在 `repos/` 下独立成仓、独立维护 Git 仓库。
+> 本仓库（muzhi-skills）只保留索引文档与全局约定，不直接包含 Skill 内容。
+
 ## 目录结构
-- 每个 Skill 在根目录下独占一个子目录，目录名即 skill 名
-- 必须包含 `SKILL.md`（YAML frontmatter: `name` + `description`）
+- 主仓库根目录仅保留索引说明（`README.md`、`AGENTS.md`）与必要全局配置
+- 每个 Skill 在 `repos/<skill-name>/` 下独占一个子目录，目录名即 skill 名，各自为独立 Git 仓库
+- 每个 Skill 目录必须包含 `SKILL.md`（YAML frontmatter: `name` + `description`）
 - 必须包含 `agents/openai.yaml`（`interface:` 嵌套格式，含 display_name、short_description、brand_color、default_prompt）
 - 可包含 `scripts/`（PowerShell 脚本）
 
@@ -22,7 +26,17 @@ interface:
 ```
 
 ## 安装方式
-`codex skills install --repo y3078266584/muzhi-skills --path <skill-name>`
+每个 Skill 独立成仓，安装命令指向各自仓库：
+
+```bash
+codex skills install --repo <your-github-username>/<skill-repo-name> --path .
+```
+
+> 每个 Skill 的详细安装说明见各自仓库的 README。
+
+## 版本管理
+- 所有 Skill 使用 `x.y.z` 版本号，初始 `1.0.0`
+- 独立仓库在 `repos/<skill>/` 内 `git init` 初始化，变更在各自仓库内提交
 
 ## 红线
 - 不改 Codex 自身的配置文件，只操作插件/会话等外围资源
